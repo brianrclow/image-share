@@ -2,12 +2,18 @@
   <Label text="Home"></Label>
 </ActionBar>
 
-<GridLayout>
-  <ListView [items]="items">
-    <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['../item', item.id]">
-        <Label [text]="item.name"></Label>
-      </StackLayout>
-    </ng-template>
-  </ListView>
-</GridLayout>
+<StackLayout>
+  <GridLayout id="score" style="background-color: aqua; height: 50%;">
+    <StackLayout verticalAlignment="center">
+      <Label text="Title" textWrap="true" horizontalAlignment="center" style="font-weight: bold;"></Label>
+      <Label text="Date" textWrap="true" horizontalAlignment="center" style="color: black;"></Label>
+      <Label text="Rating" textWrap="true" horizontalAlignment="center" style="color: black;"></Label>
+      <Label text="Score" textWrap="true" horizontalAlignment="center" style="color: black;"></Label>
+      <Label text="Notes" textWrap="true" horizontalAlignment="center" style="color: black;"></Label>
+    </StackLayout>
+  </GridLayout>
+  <Button text="Share" (tap)="shareScore($event)" style="width: 40%; height: 5%; background-color: rgb(166, 107, 233); border-radius: 50%; color: white; font-weight: bold;"></Button>
+
+  <Button text="Save" (tap)="saveScore($event)" style="width: 40%; height: 5%; background-color: rgb(233, 107, 107); border-radius: 50%; color: white; font-weight: bold;"></Button>
+
+</StackLayout>
